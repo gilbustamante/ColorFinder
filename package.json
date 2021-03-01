@@ -1,0 +1,22 @@
+{
+  "name": "colorfinder",
+  "version": "1.0.0",
+  "description": "A small app which finds the dominant color in a given image.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilbustamante/ColorFinder.git"
+  },
+  "author": "Gil Bustamante",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gilbustamante/ColorFinder/issues"
+  },
+  "homepage": "https://github.com/gilbustamante/ColorFinder#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,10 +1,10 @@
 <% layout('layouts/boilerplate') %>
   <h1>Dominant Color Finder</h1>
   <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim praesentium quis fugit ex suscipit, ab quaerat, quo rem, accusamus aspernatur fuga. Quod velit repellendus nostrum vitae corrupti nam accusamus dolorum?</span><span>Similique dolor illo voluptatibus soluta consectetur maxime consequuntur explicabo debitis officiis aliquid ducimus veritatis laborum harum numquam, laboriosam tempore nulla incidunt. Ipsa eveniet distinctio excepturi voluptate exercitationem, id dolorum ipsam.</span></p>
-  <form action="/" method="POST">
+  <form action="/" method="POST" encType="multipart/form-data">
     <div>
       <label for="fileInput" class="form-label">Select Image</label>
-      <input type="file" class="form-control" id="fileInput">
+      <input type="file" name="image" class="form-control" id="fileInput">
     </div>
     <div>
       <button class="btn btn-success btn-lg btn-block my-3 w-100">Submit</button>

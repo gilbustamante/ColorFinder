@@ -4,11 +4,12 @@
   <h3>Usage</h3>
   <p>Select an image to upload and click "Submit." You will be redirected to the result page with the image's color palette listed for you to enjoy.</p>
   <form action="/" method="POST" encType="multipart/form-data">
-    <div>
-      <label for="fileInput" class="form-label">Select Image</label>
-      <input type="file" name="image" class="form-control" id="fileInput">
+    <input type="file" name="image" class="form-control" id="fileInput" required>
+    <div class="input-group mt-3">
+      <span class="input-group-text">Color Count</span>
+      <input type="number" name="count" class="form-control" id="count" min="1" max="15" value="5" required>
     </div>
     <div>
-      <button class="btn btn-success btn-lg btn-block my-3 w-100">Submit</button>
+      <button class="btn btn-dark btn-lg btn-block my-3 w-100">Submit</button>
     </div>
   </form>

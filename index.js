@@ -25,8 +25,21 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  getColors(req.files.image.data, req.files.image.mimetype).then(colors => {
-    console.log(colors)
+  // See: https://github.com/colorjs/get-image-colors/issues/24
+  // The get-image-colors package is currently bugged
+  // so that if a 'count' of 8 or higher is used, 
+  // it returns n - 1 color objects; The following is a quick fix:
+  let count = parseInt(req.body.count)
+  if (count > 7) {
+    count++;
+  }
+  // Set type and number of colors to return
+  const options = {
+    type: req.files.image.mimetype,
+    count: count
+  }
+
+  getColors(req.files.image.data, options).then(colors => {
     res.render('result', { colors })
   })
 })

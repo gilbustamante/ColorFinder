@@ -18,6 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
+// Routes
+const paletteRoutes = require('./routes/palette');
+app.use('/', paletteRoutes);
+
 app.listen(3000, () => {
   console.log('Server listening...')
 });

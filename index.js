@@ -44,11 +44,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  getColors(req.files.image.data, 'image/gif').then(colors => {
+  getColors(req.files.image.data, req.files.image.mimetype).then(colors => {
     console.log(colors)
+    res.render('result', { colors })
   })
-  console.log()
-  res.send('File uploaded!')
 })
 
 app.listen(3000, () => {

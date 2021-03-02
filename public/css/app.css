@@ -2,3 +2,8 @@ span.colorLabel {
     color: #FFF !important;
     text-shadow: 1px 1px 2px #000 !important;
 }
+
+#submittedImage {
+    max-width: 75%;
+    max-height: 400px;
+}

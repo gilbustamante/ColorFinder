@@ -13,13 +13,20 @@ module.exports.findPalette = (req, res) => {
   if (count > 7) {
     count++;
   }
+
+  const mimetype = req.files.image.mimetype;
+  const imageBuffer = req.files.image.data;
+  // const b64encoded = window.btoa(String.fromCharCode.apply(null, imageBuffer));
+  const b64encoded = imageBuffer.toString('base64');
+  const data = `data:${mimetype};base64,${b64encoded}`;
+
   // Set type and number of colors to return
   const options = {
-    type: req.files.image.mimetype,
+    type: mimetype,
     count: count
   }
   // Pass image buffer and options to getColors() and render result
   getColors(req.files.image.data, options).then(colors => {
-    res.render('result', { colors })
+    res.render('result', { colors, data })
   })
 }

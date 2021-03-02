@@ -14,9 +14,9 @@ module.exports.findPalette = (req, res) => {
     count++;
   }
 
+  // Convert submitted image to base64 string to use as image src on result page
   const mimetype = req.files.image.mimetype;
   const imageBuffer = req.files.image.data;
-  // const b64encoded = window.btoa(String.fromCharCode.apply(null, imageBuffer));
   const b64encoded = imageBuffer.toString('base64');
   const data = `data:${mimetype};base64,${b64encoded}`;
 

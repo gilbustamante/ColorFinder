@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') %>
+<h1>Color Palette</h1>
+<!-- <div class="row">
+  <% for (let color of colors) { %>
+    <div class="col" style="background: <%= color %>">
+      <%= color %>
+    </div>
+  <% } %> 
+</div> -->
+<% for (let color of colors) { %>
+  <div class="row">
+    <div class="col p-5 text-center" style="background: <%= color %>">
+      <span class="colorLabel"><%= color %></span></div>
+  </div>
+<% } %> 

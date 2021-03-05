@@ -1,4 +1,5 @@
 const getColors = require('get-image-colors');
+const imageType = require('image-type');
 
 module.exports.renderIndex = (req, res) => {
   res.render('index');
@@ -14,6 +15,11 @@ module.exports.findPalette = (req, res) => {
     count++;
   }
 
+  if (imageType(req.files.image.data) == null) {
+    req.flash('error', 'Submitted file is not an image.');
+    return res.redirect('/');
+  }
+
   // Convert submitted image to base64 string to use as image src on result page
   const mimetype = req.files.image.mimetype;
   const imageBuffer = req.files.image.data;
@@ -26,7 +32,7 @@ module.exports.findPalette = (req, res) => {
     count: count
   }
   // Pass image buffer and options to getColors() and render result
-  getColors(req.files.image.data, options).then(colors => {
+  getColors(imageBuffer, options).then(colors => {
     res.render('result', { colors, data })
   })
 }

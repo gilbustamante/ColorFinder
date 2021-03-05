@@ -3,9 +3,10 @@
 <div class="mb-5">
   <img src="<%= data %>" alt="Submitted Image" id="submittedImage" class="my-2 shadow">
   <% for (let color of colors) { %>
-    <div class="row">
-      <div class="col p-3 text-center shadow rounded g-3" style="background: <%= color %>">
-        <span class="colorLabel"><%= color %></span></div>
+  <div class="row">
+    <div class="col p-3 text-center shadow rounded g-3" style="background: <%= color %>">
+      <span class="colorLabel"><%= color %></span>
     </div>
-  <% } %> 
+  </div>
+  <% } %>
 </div>

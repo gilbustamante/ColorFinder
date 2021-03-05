@@ -2,9 +2,10 @@
   <h1>Color Palette Finder</h1>
   <p>Simple app to find and list the color palette of a given image.</p>
   <h3>Usage</h3>
-  <p>Select an image to upload and click "Submit." You will be redirected to the result page with the image's color palette listed for you to enjoy.</p>
+  <p>Select an image to upload and click "Submit." You will be redirected to the result page with the image's color
+    palette listed for you to enjoy.</p>
   <form action="/" method="POST" encType="multipart/form-data">
-    <input type="file" name="image" class="form-control" id="fileInput" required>
+    <input type="file" name="image" class="form-control" id="fileInput" accept="image/*" required>
     <div class="input-group mt-3">
       <span class="input-group-text">Color Count</span>
       <input type="number" name="count" class="form-control" id="count" min="1" max="20" value="5" required>

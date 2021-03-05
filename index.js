@@ -2,13 +2,30 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-// TODO: file upload validation
-
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const session = require('express-session');
+const flash = require('connect-flash');
 const ejsMate = require('ejs-mate');
-const path    = require('path');
-const app     = express();
+const path = require('path');
+const app = express();
+
+// Session setup
+const sessionConfig = {
+  name: 'GCPFSession',
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}
+app.use(session(sessionConfig));
+app.use(flash());
+
+// Middleware for flash locals
+app.use((req, res, next) => {
+  res.locals.success = req.flash('success'); // If needed
+  res.locals.error = req.flash('error');
+  next();
+});
 
 // App setup
 app.engine('ejs', ejsMate);

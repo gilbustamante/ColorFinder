@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "express-session": "^1.17.1",
-    "get-image-colors": "^4.0.0"
+    "get-image-colors": "^4.0.0",
+    "image-type": "^4.1.0"
   }
 }
